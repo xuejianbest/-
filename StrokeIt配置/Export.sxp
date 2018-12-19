@@ -1,0 +1,54 @@
+<VERSION>StrokeIt .9.4</VERSION>
+
+<APP name="Default">
+打开google {
+   gesture = G
+   gesture = 2
+   google = exec, web  "https://www.google.com/webhp?newwindow=1&safe=off"
+}
+</APP>
+
+<APP name="浏览器">
+class=Chrome_WidgetWin_1
+Back [Left] {
+   gesture = Left
+   Alt+Left = keys, hotkey  "[ALT_DOWN][LEFT][ALT_UP]"
+}
+Forward [Right] {
+   gesture = Right
+   Alt+Right = keys, hotkey  "[ALT_DOWN][RIGHT][ALT_UP]"
+}
+关闭标签 {
+   gesture = Down-Right
+   Ctrl+W = keys, hotkey "[CTRL_DOWN]w[CTRL_UP]"
+}
+管理扩展 {
+   gesture = Up
+   管理扩展 = keys, keys  "[ALT_DOWN]e[ALT_UP]le"
+}
+恢复刚关闭的标签 {
+   gesture = Right-Left
+   ctrl+shift+t = keys, hotkey  "[CTRL_DOWN][SHIFT_DOWN]t[SHIFT_UP][CTRL_UP]"
+}
+浏览器设置 {
+   gesture = S
+   alt_e+s = keys, keys  "[ALT_DOWN]e[ALT_UP]s"
+}
+搜索选中词 {
+   gesture = LBUTTON_DOWN
+   右键-s = keys, keys  "[APPS]s"
+}
+应用商店 {
+   gesture = Down
+   下载插件 = exec, web  "https://chrome.google.com/webstore/category/extensions?hl=zh-CN"
+}
+最底部 {
+   gesture = Up-Down
+   End = keys, hotkey  "[END]"
+}
+最顶部 {
+   gesture = Down-Up
+   Home = keys, hotkey  "[HOME]"
+}
+</APP>
+
