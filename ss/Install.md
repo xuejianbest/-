@@ -1,0 +1,67 @@
+### Install
+##### CentOS
+```shell
+yum install python-pip
+pip install shadowsocks
+```
+
+##### Ubuntu
+```shell
+apt install python3-pip
+pip3 install setuptools
+pip3 install https://github.com/shadowsocks/shadowsocks/archive/master.zip -U
+```
+
+
+### ssconf
+```json
+{
+  "server_port":33, 
+  "password":"***",
+  "fast_open":true, 
+  "method":"aes-256-gcm", 
+  "timeout":70
+}
+
+{
+  "port_password": {
+    "33": "**1",
+    "34": "**2"
+  },
+  "method": "aes-128-cfb",
+  "timeout": 70
+}
+```
+
+---
+### ssserver
+```shell
+ssserver -c ssconf -d start
+ssserver -c ssconf -d stop
+```
+
+---
+### sslocal
+```shell
+sslocal -c ssconf -d start
+sslocal -c ssconf -d stop
+```
+
+---
+### privoxy
+```shell
+yum install privoxy
+vim /etc/privoxy/config
+# 将 forward-socks5t / 127.0.0.1:9050 取消注释
+# 改为forward-socks5t / 127.0.0.1:1080
+```
+
+```shell
+proxy="http://127.0.0.1:8118"
+export http_proxy=$proxy
+export https_proxy=$proxy
+export no_proxy="localhost, 127.0.0.1, ::1"
+
+privoxy /etc/privoxy/config
+```
+

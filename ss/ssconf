@@ -1,7 +1,0 @@
-{
-  "server_port":33, 
-  "password":"***",
-  "fast_open":true, 
-  "method":"aes-256-gcm", 
-  "timeout":70
-}
