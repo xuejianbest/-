@@ -16,7 +16,7 @@ pip3 install https://github.com/shadowsocks/shadowsocks/archive/master.zip -U
 ### ssconf
 ```json
 {
-  "server_port":33, 
+  "server_port":443, 
   "password":"***",
   "fast_open":true, 
   "method":"aes-256-gcm", 
@@ -25,8 +25,8 @@ pip3 install https://github.com/shadowsocks/shadowsocks/archive/master.zip -U
 
 {
   "port_password": {
-    "33": "**1",
-    "34": "**2"
+    "443": "**1",
+    "7443": "**2"
   },
   "method": "aes-128-cfb",
   "timeout": 70
