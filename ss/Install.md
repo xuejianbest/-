@@ -13,8 +13,8 @@ pip3 install https://github.com/shadowsocks/shadowsocks/archive/master.zip -U
 ```
 or
 ```shell
-apt -y install python3-pip & \
-pip3 install setuptools & \
+apt -y install python3-pip && \
+pip3 install setuptools && \
 pip3 install https://github.com/shadowsocks/shadowsocks/archive/master.zip -U
 ```
 
