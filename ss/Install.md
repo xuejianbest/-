@@ -76,7 +76,7 @@ privoxy /etc/privoxy/config
 ```shell
 vim /etc/shadowsocks-libev/config.json
 {
-    "server":"::",
+    "server":"0.0.0.0",
     "server_port":9000,
     "password":"***",
     "timeout":300,
@@ -91,7 +91,8 @@ vim /etc/shadowsocks-libev/config.json
 docker run -d -p 443:9000 -p 443:9000/udp --name ss -v /etc/shadowsocks-libev:/etc/shadowsocks-libev teddysun/shadowsocks-libev
 ```
 
-
-
+#### 客户端
+插件程序：`obfs-local`
+插件选项：`obfs=http;obfs-host=www.bilibili.com`
 
 
