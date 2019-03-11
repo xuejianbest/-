@@ -93,6 +93,6 @@ docker run -d -p 443:9000 -p 443:9000/udp --name ss -v /etc/shadowsocks-libev:/e
 
 #### 客户端
 插件程序：`obfs-local`
-插件选项：`obfs=http;obfs-host=www.bilibili.com`
+插件选项：`obfs=tls;obfs-host=www.bilibili.com`
 
 
