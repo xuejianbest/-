@@ -73,5 +73,7 @@ privoxy /etc/privoxy/config
 ```
 
 ### docker
+```shell
 docker pull shadowsocks/shadowsocks-libev
 docker run -e PASSWORD=*** --name ss -p 443:8388 -p 443:8388/udp -d shadowsocks/shadowsocks-libev
+```
