@@ -74,6 +74,24 @@ privoxy /etc/privoxy/config
 
 ### docker
 ```shell
-docker pull shadowsocks/shadowsocks-libev
-docker run -e PASSWORD=*** --name ss -p 443:8388 -p 443:8388/udp -d shadowsocks/shadowsocks-libev
+vim /etc/shadowsocks-libev/config.json
+{
+    "server":"::",
+    "server_port":443,
+    "password":"***",
+    "timeout":300,
+    "method":"chacha20-ietf-poly1305",
+    "fast_open":true,
+    "nameserver":"8.8.8.8",
+    "mode":"tcp_and_udp",
+    "plugin":"obfs-server",
+    "plugin_opts":"obfs=tls"
+}
+
+docker run -d -p 443:9000 -p 443:9000/udp --name ss -v /etc/shadowsocks-libev:/etc/shadowsocks-libev teddysun/shadowsocks-libev
 ```
+
+
+
+
+
