@@ -72,3 +72,6 @@ export no_proxy="localhost, 127.0.0.1, ::1"
 privoxy /etc/privoxy/config
 ```
 
+### docker
+docker pull shadowsocks/shadowsocks-libev
+docker run -e PASSWORD=*** --name ss -p 443:8388 -p 443:8388/udp -d shadowsocks/shadowsocks-libev
