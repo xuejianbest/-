@@ -77,7 +77,7 @@ privoxy /etc/privoxy/config
 vim /etc/shadowsocks-libev/config.json
 {
     "server":"::",
-    "server_port":443,
+    "server_port":9000,
     "password":"***",
     "timeout":300,
     "method":"chacha20-ietf-poly1305",
