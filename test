@@ -30,3 +30,6 @@ echo 'export PATH=$PATH:/opt/python3.6.6/bin' >> ~/.bash_profile
 pip3 install --upgrade pip
 
 https://files.pythonhosted.org/packages/91/d6/a00593677670d64c8047e33eda962d60e29fc53a0e3b8e6f7e84580577f0/cx_Oracle-8.0.0-cp37-cp37m-manylinux1_x86_64.whl
+
+https://github.com/mozilla/geckodriver/releases/download/v0.27.0/geckodriver-v0.27.0-linux64.tar.gz
+
