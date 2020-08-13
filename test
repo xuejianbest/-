@@ -33,3 +33,43 @@ https://files.pythonhosted.org/packages/91/d6/a00593677670d64c8047e33eda962d60e2
 
 https://github.com/mozilla/geckodriver/releases/download/v0.27.0/geckodriver-v0.27.0-linux64.tar.gz
 
+pip3 install selenium beautifulsoup4 lxml # ChromeDriver
+#!/usr/bin/env python
+#coding=utf-8
+from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
+from bs4 import BeautifulSoup
+import time
+
+url = 'http://www.qq.com/'
+options = Options()
+options.headless = True
+
+#如果设置代理
+"""
+profile = webdriver.FirefoxProfile()
+profile.set_preference('network.proxy.type', 1)
+profile.set_preference('network.proxy.http', "127.0.0.1")
+profile.set_preference('network.proxy.http_port', 1080)
+profile.set_preference('network.proxy.socks', "127.0.0.1")
+profile.set_preference('network.proxy.socks_port', 1080)
+profile.set_preference('network.proxy.ssl', "127.0.0.1")
+profile.set_preference('network.proxy.ssl_port', 1080)
+profile.set_preference('network.proxy.ftp', "127.0.0.1")
+profile.set_preference('network.proxy.ftp_port', 1080)
+
+#profile.set_preference("network.proxy.share_proxy_settings", True)
+#profile.update_preferences()
+"""
+
+#options.binary_location = "D:/Program Files/Mozilla Firefox/firefox.exe"
+#driver = webdriver.Firefox(executable_path='geckodriver.exe', firefox_profile=profile, firefox_options=options)
+
+#options.binary_location = "/root/firefox-linux/bin/firefox"
+driver = webdriver.Firefox(executable_path='/root/geckodriver', firefox_profile=profile, firefox_options=options)
+driver.get(url)
+html = driver.page_source
+print(html)
+driver.quit()
+
+
