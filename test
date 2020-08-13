@@ -1,0 +1,31 @@
+yum -y groupinstall "Development tools"
+
+yum -y install bzip2-devel #bz2
+yum -y install zlib-devel #zlib
+yum -y install readline-devel #readline
+yum -y install sqlite-devel #_sqlite3
+yum -y install tk-devel #_tkinter
+yum -y install ncurses-devel #_curses _curses_panel
+yum -y install db4-devel #_bsddb dbm
+yum -y install gdbm-devel #gdbm
+yum -y install openssl-devel #_ssl
+yum -y install libpng-devel
+yum -y install xz-devel #_lzma
+#bsddb185、imageop、sunaudiodev、dl这几个模块已经弃用，可以忽略。
+
+
+./configure --prefix=/opt/python3.6.6
+#如果您希望发布版本并且所有稳定优化都处于活动状态（PGO等），
+#请运行./configure --enable-optimizations
+#开启后编译会进行很多测试，速度慢很多
+
+make
+make install
+
+
+cp ~/.bash_profile ~/.bash_profile.bak
+echo 'export PATH=$PATH:/opt/python3.6.6/bin' >> ~/.bash_profile
+. ~/.bash_profile
+
+pip3 install --upgrade pip
+
