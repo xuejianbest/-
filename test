@@ -73,4 +73,4 @@ html = driver.page_source
 print(html)
 driver.quit()
 
-
+yum -y localinstall google-chrome-stable_current_x86_64.rpm
